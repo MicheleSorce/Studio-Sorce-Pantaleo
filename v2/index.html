@@ -413,13 +413,37 @@
 </section>
 <section class="on-dark" style="background:linear-gradient(180deg,var(--navy-900) 0%,var(--navy-800) 100%);padding:96px 24px;text-align:center;">
   <style>
-    #hometeam .tav{display:inline-block;line-height:0;}
+    #hometeam .tav{display:inline-block;line-height:0;position:relative;} #hometeam .tav:hover{z-index:10;}
     #hometeam .tav img{transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s;cursor:pointer;}
-    #hometeam .tav:hover img{transform:scale(1.45);position:relative;z-index:5;box-shadow:0 16px 36px rgba(0,0,0,.55);border-color:#fff;}
+    #hometeam .tav:hover img{transform:scale(1.18);position:relative;z-index:10;box-shadow:0 14px 30px rgba(0,0,0,.5);border-color:#fff;}
   </style>
   <div id="hometeam" style="max-width:900px;margin:0 auto;">
     <div data-anim="fade-up"><p class="t-eyebrow">Il team</p><h2 class="t-h2">Professionisti al tuo fianco</h2></div>
     <div style="display:flex;justify-content:center;align-items:center;margin:44px 0 0;flex-wrap:wrap;row-gap:22px;"><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/cinzia-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="4" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/yosella-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="3" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/danilo-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="2" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/carmela-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="1" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/piero-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="1" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/adriana-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="2" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/saveria-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="3" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a></div>
+  </div>
+</section>
+<section id="prenota" data-anim="fade-up" style="background:#0F172A;padding:80px 24px;position:relative;overflow:hidden;">
+  <!-- Background decorative circle -->
+  <div style="position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(255,255,255,0.04);pointer-events:none;"></div>
+  <div style="position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(255,255,255,0.06);pointer-events:none;"></div>
+
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:40px;position:relative;z-index:1;">
+    <div>
+      <p style="font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;font-family:'DM Sans', system-ui, sans-serif;">Prenota una visita</p>
+      <h2 style="font-size:clamp(32px,5vw,56px);font-weight:600;margin:0 0 12px;color:#fff;font-family:'Cormorant Garamond', Georgia, serif;letter-spacing:-0.5px;line-height:1.05;font-style:italic;">Inizia il tuo<br><span style="font-style:normal;font-weight:700;">percorso oggi</span></h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.45);margin:0;font-weight:300;line-height:1.7;">Chiamaci o scrivici: risponderemo<br>entro poche ore.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+      
+      <a href="tel:0934991544"
+        style="display:flex;align-items:center;gap:14px;background:#2563EB;color:#fff;padding:18px 32px;border-radius:100px;font-size:17px;font-weight:700;text-decoration:none;letter-spacing:-0.2px;box-shadow:0 8px 32px #2563EB50;font-family:'DM Sans', system-ui, sans-serif;"
+        onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px #2563EB60'"
+        onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px #2563EB50'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.21 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Contattaci
+      </a>
+      
+    </div>
   </div>
 </section>
 <section id="recensioni" style="background:var(--bg-soft);padding:96px 24px;">
@@ -447,30 +471,6 @@
     </div>
   </div>
   <style>@media(max-width:900px){.rv-grid{grid-template-columns:1fr!important;max-width:600px;margin:0 auto;}}</style>
-</section>
-<section id="prenota" data-anim="fade-up" style="background:#0F172A;padding:80px 24px;position:relative;overflow:hidden;">
-  <!-- Background decorative circle -->
-  <div style="position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(255,255,255,0.04);pointer-events:none;"></div>
-  <div style="position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(255,255,255,0.06);pointer-events:none;"></div>
-
-  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:40px;position:relative;z-index:1;">
-    <div>
-      <p style="font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;font-family:'DM Sans', system-ui, sans-serif;">Prenota una visita</p>
-      <h2 style="font-size:clamp(32px,5vw,56px);font-weight:600;margin:0 0 12px;color:#fff;font-family:'Cormorant Garamond', Georgia, serif;letter-spacing:-0.5px;line-height:1.05;font-style:italic;">Inizia il tuo<br><span style="font-style:normal;font-weight:700;">percorso oggi</span></h2>
-      <p style="font-size:15px;color:rgba(255,255,255,0.45);margin:0;font-weight:300;line-height:1.7;">Chiamaci o scrivici: risponderemo<br>entro poche ore.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-      
-      <a href="tel:0934991544"
-        style="display:flex;align-items:center;gap:14px;background:#2563EB;color:#fff;padding:18px 32px;border-radius:100px;font-size:17px;font-weight:700;text-decoration:none;letter-spacing:-0.2px;box-shadow:0 8px 32px #2563EB50;font-family:'DM Sans', system-ui, sans-serif;"
-        onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px #2563EB60'"
-        onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px #2563EB50'">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.21 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Contattaci
-      </a>
-      
-    </div>
-  </div>
 </section>
 
 

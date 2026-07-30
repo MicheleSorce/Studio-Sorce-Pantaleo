@@ -1,0 +1,96 @@
+/* ===== Dental Arts Studio — design system condiviso ===== */
+:root{
+  --navy-900:#0A0F1E; --navy-800:#0F1D3D; --navy-700:#12294f;
+  --blue:#2563EB; --blue-300:#7FA8F5; --blue-100:#BFD3FF;
+  --ink:#0F172A; --muted:#4B5E8C; --muted-2:#334769;
+  --bg-soft:#EFF6FF; --line:rgba(15,29,61,.08);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --maxw:1140px;
+}
+
+/* ============ SCALA TIPOGRAFICA SEMANTICA ============ */
+/* Kicker / occhiello — etichetta di sezione */
+.t-eyebrow{font-family:var(--sans);font-weight:600;font-size:12px;line-height:1;
+  letter-spacing:4px;text-transform:uppercase;color:var(--blue);margin:0 0 16px;}
+/* Display — titolo hero (il più grande) */
+.t-display{font-family:var(--serif);font-style:italic;font-weight:600;
+  font-size:clamp(46px,7vw,88px);line-height:1.02;letter-spacing:-1px;color:#fff;margin:0;}
+/* H1 — titolo pagina (banner) */
+.t-h1{font-family:var(--serif);font-style:italic;font-weight:600;
+  font-size:clamp(38px,5.5vw,66px);line-height:1.04;letter-spacing:-1px;color:var(--ink);margin:0;}
+/* H2 — titolo sezione */
+.t-h2{font-family:var(--serif);font-style:italic;font-weight:600;
+  font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.5px;color:var(--ink);margin:0;}
+/* H3 — titolo card (serif, non corsivo, per distinguerlo dai titoli-sezione) */
+.t-h3{font-family:var(--serif);font-weight:600;font-size:clamp(20px,2.2vw,24px);
+  line-height:1.2;letter-spacing:-.2px;color:var(--ink);margin:0;}
+/* Lead — paragrafo introduttivo */
+.t-lead{font-family:var(--sans);font-weight:300;font-size:clamp(16px,1.6vw,19px);
+  line-height:1.85;color:var(--muted);margin:0;}
+/* Body — testo corrente */
+.t-body{font-family:var(--sans);font-weight:400;font-size:15px;line-height:1.7;color:var(--muted);margin:0;}
+/* Small / caption */
+.t-small{font-family:var(--sans);font-weight:500;font-size:13px;line-height:1.5;color:var(--muted);}
+/* Stat — numero grande */
+.t-stat{font-family:var(--serif);font-style:italic;font-weight:700;
+  font-size:clamp(34px,3.6vw,44px);line-height:1;color:var(--blue);}
+
+/* Varianti su fondo scuro */
+.on-dark .t-h1,.on-dark .t-h2,.on-dark .t-h3{color:#fff;}
+.on-dark .t-eyebrow{color:var(--blue-300);}
+.on-dark .t-lead{color:rgba(255,255,255,.72);}
+.on-dark .t-body{color:rgba(255,255,255,.6);}
+
+/* ============ COMPONENTI ============ */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;
+  padding:15px 32px;border-radius:100px;font:600 15px/1 var(--sans);letter-spacing:.3px;text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 8px 28px rgba(37,99,235,.28);}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(37,99,235,.36);}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;
+  padding:14px 30px;border-radius:100px;font:600 15px/1 var(--sans);letter-spacing:.3px;text-decoration:none;
+  border:1px solid rgba(255,255,255,.45);transition:background .2s ease,border-color .2s ease;}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.8);}
+.btn-ghost.on-light{color:var(--navy-700);border-color:rgba(18,41,79,.35);}
+.btn-ghost.on-light:hover{background:rgba(18,41,79,.06);}
+
+.card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(15,29,61,.08);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(15,29,61,.14);}
+.card img{transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+.card:hover img{transform:scale(1.05);}
+
+/* ============ MOTION (attivo solo con JS) ============ */
+.js [data-anim]{opacity:0;will-change:transform,opacity;
+  transition:opacity .8s ease, transform .85s cubic-bezier(.2,.7,.2,1), clip-path .9s cubic-bezier(.2,.7,.2,1);}
+.js [data-anim].in{opacity:1;transform:none;clip-path:inset(0 0 0 0);}
+.js [data-anim="fade"]{transform:none;}
+.js [data-anim="fade-up"]{transform:translateY(30px);}
+.js [data-anim="rise"]{transform:translateY(46px);}
+.js [data-anim="zoom-in"]{transform:scale(.9);}
+.js [data-anim="from-left"]{transform:translateX(-48px);}
+.js [data-anim="from-right"]{transform:translateX(48px);}
+.js [data-anim="clip-up"]{clip-path:inset(100% 0 0 0);transform:translateY(18px);}
+.js [data-anim="clip-right"]{clip-path:inset(0 100% 0 0);}
+/* Retro-compat: .reveal = fade-up */
+.js .reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);}
+.js .reveal.in{opacity:1;transform:none;}
+/* Stagger */
+.js [data-d="1"]{transition-delay:.07s}
+.js [data-d="2"]{transition-delay:.14s}
+.js [data-d="3"]{transition-delay:.21s}
+.js [data-d="4"]{transition-delay:.28s}
+.js [data-d="5"]{transition-delay:.35s}
+.js [data-d="6"]{transition-delay:.42s}
+.js [data-d="7"]{transition-delay:.49s}
+
+@media(prefers-reduced-motion:reduce){
+  .js [data-anim],.js .reveal{opacity:1 !important;transform:none !important;clip-path:none !important;transition:none !important;}
+  html{scroll-behavior:auto !important;}
+}
+
+nav{transition:box-shadow .3s ease,background .3s ease;}
+
+/* Palette bloccata su blu: nascondo il toggle blu/oro */
+#__palette-wrap{display:none !important;}

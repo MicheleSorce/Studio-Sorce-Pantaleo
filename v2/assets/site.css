@@ -94,3 +94,6 @@ nav{transition:box-shadow .3s ease,background .3s ease;}
 
 /* Palette bloccata su blu: nascondo il toggle blu/oro */
 #__palette-wrap{display:none !important;}
+
+/* Hero: scrim scuro in basso per staccare la stats-bar dal video */
+#__hero_stats{ background:rgba(6,10,22,.72) !important; box-shadow:0 -48px 80px 6px rgba(6,10,22,.6); }

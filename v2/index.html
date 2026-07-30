@@ -398,7 +398,6 @@
         </div>
       </a>
     </div>
-    <div style="text-align:center;margin-top:42px;" data-anim="fade-up"><a href="servizi.html" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#12294f;padding:15px 32px;border-radius:100px;font:600 15px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.3px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.22);">Tutti i servizi</a></div>
   </div>
 </section>
 <section style="background:var(--bg-soft);padding:60px 24px;overflow:hidden;">
@@ -413,10 +412,14 @@
   </div>
 </section>
 <section class="on-dark" style="background:linear-gradient(180deg,var(--navy-900) 0%,var(--navy-800) 100%);padding:96px 24px;text-align:center;">
-  <div style="max-width:900px;margin:0 auto;">
+  <style>
+    #hometeam .tav{display:inline-block;line-height:0;}
+    #hometeam .tav img{transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s;cursor:pointer;}
+    #hometeam .tav:hover img{transform:scale(1.45);position:relative;z-index:5;box-shadow:0 16px 36px rgba(0,0,0,.55);border-color:#fff;}
+  </style>
+  <div id="hometeam" style="max-width:900px;margin:0 auto;">
     <div data-anim="fade-up"><p class="t-eyebrow">Il team</p><h2 class="t-h2">Professionisti al tuo fianco</h2></div>
-    <div style="display:flex;justify-content:center;align-items:center;margin:36px 0 34px;flex-wrap:wrap;row-gap:16px;"><img src="team/cinzia-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="4" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/><img src="team/yosella-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="3" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/><img src="team/danilo-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="2" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/><img src="team/carmela-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="1" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/><img src="team/piero-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="1" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/><img src="team/adriana-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="2" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/><img src="team/saveria-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="3" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></div>
-    <div data-anim="fade-up"><a class="btn-ghost" href="team.html">Conosci il team</a></div>
+    <div style="display:flex;justify-content:center;align-items:center;margin:44px 0 0;flex-wrap:wrap;row-gap:22px;"><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/cinzia-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="4" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/yosella-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="3" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/danilo-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="2" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/carmela-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="1" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/piero-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="1" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/adriana-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="2" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a><a class="tav" href="team.html" aria-label="Vai al team"><img src="team/saveria-1.jpg" alt="" loading="lazy" data-anim="zoom-in" data-d="3" style="width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.28);margin:0 -6px;box-shadow:0 8px 20px rgba(0,0,0,.32);"/></a></div>
   </div>
 </section>
 <section id="recensioni" style="background:var(--bg-soft);padding:96px 24px;">
@@ -463,7 +466,7 @@
         onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px #2563EB60'"
         onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px #2563EB50'">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.21 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        0934 991544
+        Contattaci
       </a>
       
     </div>

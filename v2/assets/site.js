@@ -1,21 +1,31 @@
-/* ===== Dental Arts Studio — motion condiviso ===== */
+/* ===== Dental Arts Studio — motion condiviso (reveal robusto, no IntersectionObserver) ===== */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var animated = [].slice.call(document.querySelectorAll('[data-anim], .reveal'));
 
-  // Reveal on scroll (fade/zoom/slide/clip via data-anim in CSS)
-  if (reduce || !('IntersectionObserver' in window)) {
+  if (reduce) {
     animated.forEach(function (e) { e.classList.add('in'); });
   } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (x) {
-        if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); }
-      });
-    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
-    animated.forEach(function (e) { io.observe(e); });
+    // Rivela gli elementi quando entrano nel viewport (calcolo diretto, affidabile ovunque)
+    var reveal = function () {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      for (var i = animated.length - 1; i >= 0; i--) {
+        var r = animated[i].getBoundingClientRect();
+        if (r.top < vh * 0.9 && r.bottom > 0) {
+          animated[i].classList.add('in');
+          animated.splice(i, 1);
+        }
+      }
+    };
+    reveal();
+    window.addEventListener('scroll', reveal, { passive: true });
+    window.addEventListener('resize', reveal, { passive: true });
+    window.addEventListener('load', function () { reveal(); setTimeout(reveal, 200); });
+    // Failsafe assoluto: dopo 4s mostra comunque tutto cio che resta (mai contenuti nascosti)
+    setTimeout(function () { animated.slice().forEach(function (e) { e.classList.add('in'); }); }, 4000);
   }
 
-  // Parallax leggero: elementi con [data-parallax="0.12"] (fattore)
+  // Parallax leggero: elementi con [data-parallax="0.12"]
   var parE = [].slice.call(document.querySelectorAll('[data-parallax]'));
   if (!reduce && parE.length) {
     var ticking = false;
@@ -25,7 +35,7 @@
         var r = el.getBoundingClientRect();
         if (r.bottom < -100 || r.top > vh + 100) return;
         var factor = parseFloat(el.getAttribute('data-parallax')) || 0.1;
-        var center = r.top + r.height / 2 - vh / 2;   // distanza dal centro viewport
+        var center = r.top + r.height / 2 - vh / 2;
         el.style.transform = 'translate3d(0,' + (-center * factor) + 'px,0)';
       });
       ticking = false;

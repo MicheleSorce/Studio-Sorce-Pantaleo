@@ -604,9 +604,15 @@
       if(img) img.style.transform = isActive ? 'scale(1.03)' : 'scale(1)';
     });
 
-    // Scroll active card into view
+    // Scroll SOLO orizzontale della strip (non muove la pagina in verticale)
     var activeCard = document.querySelector('.' + uid + '_card[data-idx="' + cur + '"]');
-    if(activeCard) activeCard.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+    var stripEl = document.getElementById(uid + '_strip');
+    if(activeCard && stripEl){
+      var cr = activeCard.getBoundingClientRect();
+      var sr = stripEl.getBoundingClientRect();
+      var delta = (cr.left - sr.left) - (stripEl.clientWidth - activeCard.offsetWidth) / 2;
+      stripEl.scrollBy({ left: delta, behavior:'smooth' });
+    }
 
     var curEl = document.getElementById(uid + '_cur');
     if(curEl) curEl.textContent = String(cur + 1).padStart(2, '0');

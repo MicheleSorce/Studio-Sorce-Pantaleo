@@ -682,7 +682,19 @@
       <p style="font-size:15px;color:#4B5E8C;max-width:480px;margin:0 auto;line-height:1.8;font-weight:300;">Ogni trattamento è studiato per valorizzare la tua bellezza naturale con tecniche all'avanguardia e risultati duraturi.</p>
     </div>
 
-    <!-- Tab bar -->
+<style>
+  .me-layout{display:flex;gap:34px;align-items:flex-start;}
+  #__me_medicina_estetica_tabbar{flex-direction:column !important;overflow:visible !important;gap:6px !important;width:242px;flex-shrink:0;border-bottom:none !important;position:sticky;top:84px;padding:0 !important;margin-bottom:0 !important;}
+  #__me_medicina_estetica_tabbar button{width:100% !important;text-align:left !important;justify-content:flex-start !important;border-radius:10px !important;white-space:normal !important;padding:12px 16px !important;flex-shrink:0;line-height:1.25;}
+  #__me_medicina_estetica_nav_desktop{display:none !important;}
+  @media(max-width:768px){
+    .me-layout{flex-direction:column !important;gap:14px !important;}
+    #__me_medicina_estetica_tabbar{flex-direction:row !important;overflow-x:auto !important;width:auto !important;position:static !important;gap:8px !important;}
+    #__me_medicina_estetica_tabbar button{width:auto !important;white-space:nowrap !important;border-radius:100px !important;padding:10px 18px !important;}
+  }
+</style>
+    <div class="me-layout">
+    <!-- Menu laterale trattamenti -->
     <div id="__me_medicina_estetica_tabbar" style="display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px;border-bottom:1px solid #0F172A0A;">
       
     <button id="__me_medicina_estetica_tab0"
@@ -768,6 +780,7 @@
     </button>
     </div>
 
+    <div class="me-content" style="flex:1;min-width:0;">
     <!-- Navigation mobile (subito dopo la tab bar) -->
     <div id="__me_medicina_estetica_nav_mobile" style="align-items:center;justify-content:center;gap:16px;margin-bottom:32px;">
       <button onclick="__me_medicina_estetica_go(window['____me_medicina_esteticaIdx'] - 1)"
@@ -1406,6 +1419,8 @@
           </ul>
       </div>
 
+    </div>
+    </div>
     </div>
     </div>
 

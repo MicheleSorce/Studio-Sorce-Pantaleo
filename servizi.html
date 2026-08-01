@@ -561,7 +561,7 @@
         style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);cursor:pointer;color:rgba(255,255,255,0.7);font-size:16px;transition:all 0.2s;display:flex;align-items:center;justify-content:center;"
         onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">←</button>
       <span style="font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:2px;font-family:'DM Sans', system-ui, sans-serif;">
-        <span id="__csl_servizi_cur" style="color:#fff;font-weight:700;">01</span> / 09
+        <span id="__csl_servizi_cur" style="color:#fff;font-weight:700;">01</span> / 08
       </span>
       <button onclick="__csl_servizi_go(window['____csl_serviziIdx'] + 1)"
         style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);cursor:pointer;color:rgba(255,255,255,0.7);font-size:16px;transition:all 0.2s;display:flex;align-items:center;justify-content:center;"
@@ -684,101 +684,57 @@
 
 <style>
   .me-layout{display:flex;gap:34px;align-items:flex-start;}
-  #__me_medicina_estetica_tabbar{flex-direction:column !important;overflow:visible !important;gap:6px !important;width:242px;flex-shrink:0;border-bottom:none !important;position:sticky;top:84px;padding:0 !important;margin-bottom:0 !important;}
-  #__me_medicina_estetica_tabbar button{width:100% !important;text-align:left !important;justify-content:flex-start !important;border-radius:10px !important;white-space:normal !important;padding:12px 16px !important;flex-shrink:0;line-height:1.25;}
+  #__me_medicina_estetica_tabbar{display:block !important;overflow:visible !important;width:252px;flex-shrink:0;border-bottom:none !important;position:sticky;top:84px;padding:0 !important;margin:0 !important;}
+  .me-cat{margin-bottom:8px;}
+  .me-cat-head{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;border:1px solid #dce7fb;background:#fff;color:#0F172A;font-family:'DM Sans',system-ui,sans-serif;font-size:13.5px;font-weight:700;padding:12px 15px;border-radius:10px;cursor:pointer;transition:.2s;}
+  .me-cat-head:hover{border-color:#2563EB;}
+  .me-cat-head .me-pl{color:#2563EB;font-size:18px;line-height:1;transition:transform .3s;}
+  .me-cat.open .me-cat-head .me-pl{transform:rotate(45deg);}
+  .me-cat-items{display:none;padding:6px 0 6px;}
+  .me-cat.open .me-cat-items{display:block;}
+  .me-item{display:block;width:100%;text-align:left;border:none;background:transparent;color:#4B5E8C;font-family:'DM Sans',system-ui,sans-serif;font-size:13.5px;font-weight:600;padding:10px 14px;border-radius:9px;cursor:pointer;transition:.18s;line-height:1.25;margin-bottom:2px;}
+  .me-item:not(.me-active):hover{background:#E6EEFF;color:#2563EB;}
+  .me-item.me-active{background:#2563EB;color:#fff;}
   #__me_medicina_estetica_nav_desktop{display:none !important;}
   @media(max-width:768px){
-    .me-layout{flex-direction:column !important;gap:14px !important;}
-    #__me_medicina_estetica_tabbar{flex-direction:row !important;overflow-x:auto !important;width:auto !important;position:static !important;gap:8px !important;}
-    #__me_medicina_estetica_tabbar button{width:auto !important;white-space:nowrap !important;border-radius:100px !important;padding:10px 18px !important;}
+    .me-layout{flex-direction:column !important;gap:16px !important;}
+    #__me_medicina_estetica_tabbar{width:auto !important;position:static !important;}
   }
 </style>
     <div class="me-layout">
     <!-- Menu laterale trattamenti -->
-    <div id="__me_medicina_estetica_tabbar" style="display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px;border-bottom:1px solid #0F172A0A;">
-      
-    <button id="__me_medicina_estetica_tab0"
-      onclick="__me_medicina_estetica_go(0)"
-      style="flex-shrink:0;padding:10px 20px;border:none;cursor:pointer;font-size:13px;font-weight:600;
-             letter-spacing:0.2px;border-radius:100px;white-space:nowrap;font-family:'DM Sans', system-ui, sans-serif;
-             transition:all 0.25s;
-             background:#2563EB;
-             color:#fff;">
-      Filler labbra
-    </button>
-    <button id="__me_medicina_estetica_tab1"
-      onclick="__me_medicina_estetica_go(1)"
-      style="flex-shrink:0;padding:10px 20px;border:none;cursor:pointer;font-size:13px;font-weight:600;
-             letter-spacing:0.2px;border-radius:100px;white-space:nowrap;font-family:'DM Sans', system-ui, sans-serif;
-             transition:all 0.25s;
-             background:transparent;
-             color:#4B5E8C;">
-      Botox per
-    </button>
-    <button id="__me_medicina_estetica_tab2"
-      onclick="__me_medicina_estetica_go(2)"
-      style="flex-shrink:0;padding:10px 20px;border:none;cursor:pointer;font-size:13px;font-weight:600;
-             letter-spacing:0.2px;border-radius:100px;white-space:nowrap;font-family:'DM Sans', system-ui, sans-serif;
-             transition:all 0.25s;
-             background:transparent;
-             color:#4B5E8C;">
-      Dermapen (Microneedling)
-    </button>
-    <button id="__me_medicina_estetica_tab3"
-      onclick="__me_medicina_estetica_go(3)"
-      style="flex-shrink:0;padding:10px 20px;border:none;cursor:pointer;font-size:13px;font-weight:600;
-             letter-spacing:0.2px;border-radius:100px;white-space:nowrap;font-family:'DM Sans', system-ui, sans-serif;
-             transition:all 0.25s;
-             background:transparent;
-             color:#4B5E8C;">
-      Rughe nasogeniene
-    </button>
-    <button id="__me_medicina_estetica_tab4"
-      onclick="__me_medicina_estetica_go(4)"
-      style="flex-shrink:0;padding:10px 20px;border:none;cursor:pointer;font-size:13px;font-weight:600;
-             letter-spacing:0.2px;border-radius:100px;white-space:nowrap;font-family:'DM Sans', system-ui, sans-serif;
-             transition:all 0.25s;
-             background:transparent;
-             color:#4B5E8C;">
-      Botox codice
-    </button>
-    <button id="__me_medicina_estetica_tab5"
-      onclick="__me_medicina_estetica_go(5)"
-      style="flex-shrink:0;padding:10px 20px;border:none;cursor:pointer;font-size:13px;font-weight:600;
-             letter-spacing:0.2px;border-radius:100px;white-space:nowrap;font-family:'DM Sans', system-ui, sans-serif;
-             transition:all 0.25s;
-             background:transparent;
-             color:#4B5E8C;">
-      Micro-botox e
-    </button>
-    <button id="__me_medicina_estetica_tab6"
-      onclick="__me_medicina_estetica_go(6)"
-      style="flex-shrink:0;padding:10px 20px;border:none;cursor:pointer;font-size:13px;font-weight:600;
-             letter-spacing:0.2px;border-radius:100px;white-space:nowrap;font-family:'DM Sans', system-ui, sans-serif;
-             transition:all 0.25s;
-             background:transparent;
-             color:#4B5E8C;">
-      Faccette dentali
-    </button>
-    <button id="__me_medicina_estetica_tab7"
-      onclick="__me_medicina_estetica_go(7)"
-      style="flex-shrink:0;padding:10px 20px;border:none;cursor:pointer;font-size:13px;font-weight:600;
-             letter-spacing:0.2px;border-radius:100px;white-space:nowrap;font-family:'DM Sans', system-ui, sans-serif;
-             transition:all 0.25s;
-             background:transparent;
-             color:#4B5E8C;">
-      Nefertiti Neck
-    </button>
-    <button id="__me_medicina_estetica_tab8"
-      onclick="__me_medicina_estetica_go(8)"
-      style="flex-shrink:0;padding:10px 20px;border:none;cursor:pointer;font-size:13px;font-weight:600;
-             letter-spacing:0.2px;border-radius:100px;white-space:nowrap;font-family:'DM Sans', system-ui, sans-serif;
-             transition:all 0.25s;
-             background:transparent;
-             color:#4B5E8C;">
-      Microneedling Dermapen
-    </button>
+    <div id="__me_medicina_estetica_tabbar">
+      <div class="me-cat open">
+        <button class="me-cat-head" onclick="__meCat(this)">Filler &amp; labbra<span class="me-pl">+</span></button>
+        <div class="me-cat-items">
+          <button id="__me_medicina_estetica_tab0" onclick="__me_medicina_estetica_go(0)" class="me-item me-active">Filler labbra</button>
+          <button id="__me_medicina_estetica_tab3" onclick="__me_medicina_estetica_go(3)" class="me-item">Rughe nasogeniene</button>
+        </div>
+      </div>
+      <div class="me-cat">
+        <button class="me-cat-head" onclick="__meCat(this)">Botulino<span class="me-pl">+</span></button>
+        <div class="me-cat-items">
+          <button id="__me_medicina_estetica_tab4" onclick="__me_medicina_estetica_go(4)" class="me-item">Botox codice a barre</button>
+          <button id="__me_medicina_estetica_tab7" onclick="__me_medicina_estetica_go(7)" class="me-item">Nefertiti Neck Lift</button>
+          <button id="__me_medicina_estetica_tab5" onclick="__me_medicina_estetica_go(5)" class="me-item">Micro-botox e acne</button>
+          <button id="__me_medicina_estetica_tab1" onclick="__me_medicina_estetica_go(1)" class="me-item">Botox per bruxismo</button>
+        </div>
+      </div>
+      <div class="me-cat">
+        <button class="me-cat-head" onclick="__meCat(this)">Pelle &amp; texture<span class="me-pl">+</span></button>
+        <div class="me-cat-items">
+          <button id="__me_medicina_estetica_tab2" onclick="__me_medicina_estetica_go(2)" class="me-item">Dermapen (Microneedling)</button>
+        </div>
+      </div>
+      <div class="me-cat">
+        <button class="me-cat-head" onclick="__meCat(this)">Sorriso<span class="me-pl">+</span></button>
+        <div class="me-cat-items">
+          <button id="__me_medicina_estetica_tab6" onclick="__me_medicina_estetica_go(6)" class="me-item">Faccette dentali</button>
+        </div>
+      </div>
     </div>
+    <script>window.__meCat=function(h){var g=h.parentNode,was=g.classList.contains("open");var a=document.querySelectorAll("#__me_medicina_estetica_tabbar .me-cat");for(var k=0;k<a.length;k++)a[k].classList.remove("open");if(!was)g.classList.add("open");};<\/script>
+
 
     <div class="me-content" style="flex:1;min-width:0;">
     <!-- Navigation mobile (subito dopo la tab bar) -->
@@ -787,7 +743,7 @@
         style="width:40px;height:40px;border-radius:50%;border:1px solid #2563EB30;background:transparent;cursor:pointer;font-size:16px;color:#2563EB;display:flex;align-items:center;justify-content:center;">←</button>
       <span style="font-size:12px;color:#4B5E8C;letter-spacing:1px;font-family:'DM Sans', system-ui, sans-serif;">
         <span id="__me_medicina_estetica_mob_cur" style="font-weight:700;color:#0F172A;">01</span>
-        <span> / 09</span>
+        <span> / 08</span>
       </span>
       <button onclick="__me_medicina_estetica_go(window['____me_medicina_esteticaIdx'] + 1)"
         style="width:40px;height:40px;border-radius:50%;border:1px solid #2563EB30;background:transparent;cursor:pointer;font-size:16px;color:#2563EB;display:flex;align-items:center;justify-content:center;">→</button>
@@ -1428,7 +1384,7 @@
     <div id="__me_medicina_estetica_nav_desktop" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:40px;">
       <span style="font-size:12px;color:#4B5E8C;letter-spacing:1px;font-family:'DM Sans', system-ui, sans-serif;">
         <span id="__me_medicina_estetica_cur" style="font-weight:700;color:#0F172A;">01</span>
-        <span> / 09</span>
+        <span> / 08</span>
       </span>
       <button onclick="__me_medicina_estetica_go(____me_medicina_esteticaIdx - 1)"
         style="width:40px;height:40px;border-radius:50%;border:1px solid #2563EB30;background:transparent;cursor:pointer;font-size:16px;color:#2563EB;transition:all 0.2s;display:flex;align-items:center;justify-content:center;"
@@ -1446,7 +1402,7 @@
 <script>
 (function(){
   var uid = '__me_medicina_estetica';
-  var n = 9;
+  var n = 8;
   window['__' + uid + 'Idx'] = 0;
 
   // ── Tab navigation ────────────────────────────────
@@ -1461,18 +1417,11 @@
     if(prevPanel) prevPanel.style.display = 'none';
     if(curPanel)  { curPanel.style.display = 'grid'; curPanel.style.animation = 'none'; void curPanel.offsetWidth; curPanel.style.animation = ''; }
 
-    // Update tabs
+    // Update menu items (classe attiva)
     for(var i = 0; i < n; i++) {
       var tab = document.getElementById(uid + '_tab' + i);
-      if(!tab) continue;
-      var activePrimary = window.__primary || '#2563EB';
-      tab.style.background = i === cur ? activePrimary : 'transparent';
-      tab.style.color = i === cur ? '#fff' : '#4B5E8C';
+      if(tab) tab.classList.toggle('me-active', i === cur);
     }
-
-    // Scroll active tab into view
-    var activeTab = document.getElementById(uid + '_tab' + cur);
-    if(activeTab) activeTab.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
 
     // Counter
     var curEl = document.getElementById(uid + '_cur');

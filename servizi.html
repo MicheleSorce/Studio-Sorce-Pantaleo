@@ -611,6 +611,29 @@
     var curEl = document.getElementById(uid + '_cur');
     if(curEl) curEl.textContent = String(cur + 1).padStart(2, '0');
   };
+
+  // ── Autoplay: scorre e ingrandisce una card alla volta, pausa su hover ──
+  (function(){
+    var strip = document.getElementById(uid + '_strip');
+    if(!strip) return;
+    var delay = 2800, timer = null, paused = false;
+    function step(){ if(paused) return; window[uid + '_go']((window['__' + uid + 'Idx'] || 0) + 1); }
+    function start(){ if(!timer) timer = setInterval(step, delay); }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+    // pausa quando il mouse è sopra la strip; riprende quando esce
+    strip.addEventListener('mouseenter', function(){ paused = true; });
+    strip.addEventListener('mouseleave', function(){ paused = false; });
+    // passando il mouse su una card, quella si ingrandisce (e resta, perché è in pausa)
+    document.querySelectorAll('.' + uid + '_card').forEach(function(c){
+      c.addEventListener('mouseenter', function(){
+        paused = true;
+        window[uid + '_go'](parseInt(c.getAttribute('data-idx')));
+      });
+    });
+    // non far girare l'autoplay se la scheda non è visibile
+    document.addEventListener('visibilitychange', function(){ if(document.hidden){ stop(); } else { start(); } });
+    start();
+  })();
 })();
 </script>
 
